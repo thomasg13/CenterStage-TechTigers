@@ -4,3 +4,6 @@
 
 Download or Clone the Repository, build with Android Studio
 
+## Info for Collaborators
+
+Clone Repository with GitHub Desktop, allows for easy uploads
