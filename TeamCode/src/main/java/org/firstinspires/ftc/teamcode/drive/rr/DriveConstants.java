@@ -4,12 +4,8 @@ import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
-/*
- * Constants shared between multiple drive types.
- *
- * TODO: Tune or adjust the following constants to fit your robot. Note that the non-final
- * fields may also be edited through the dashboard (connect to the robot's WiFi network and
- * navigate to https://192.168.49.1:8080/dash). Make sure to save the values here after you
+/*\
+ * Make sure to save the values here after you
  * adjust them in the dashboard; **config variable changes don't persist between app restarts**.
  *
  * These are not the only parameters; some are located in the localizer classes, drive base classes,
@@ -45,7 +41,7 @@ public class DriveConstants {
      * angular distances although most angular parameters are wrapped in Math.toRadians() for
      * convenience. Make sure to exclude any gear ratio included in MOTOR_CONFIG from GEAR_RATIO.
      */
-    public static double WHEEL_RADIUS = 1.9; // previous 1.75
+    public static double WHEEL_RADIUS = 1.9; // previous 1.75, CHANGE THIS IF UNDERSHOOT OR OVERSHOOT
     public static double GEAR_RATIO = 1; // output (wheel) speed / input (motor) speed
     public static double TRACK_WIDTH = 13.71; // in
 

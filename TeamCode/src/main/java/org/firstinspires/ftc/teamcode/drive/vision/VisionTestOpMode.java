@@ -1,10 +1,13 @@
 package org.firstinspires.ftc.teamcode.drive.vision;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 @Autonomous(name="Vision Test", group="Test")
 public class VisionTestOpMode extends LinearOpMode {
+
+
     @Override
     public void runOpMode() throws InterruptedException {
         TeamElementSubsystem visionSubsystem = new TeamElementSubsystem(hardwareMap);
@@ -33,8 +36,8 @@ public class VisionTestOpMode extends LinearOpMode {
         while (opModeIsActive()) {
             int detectedZone = visionSubsystem.elementDetection(telemetry);
             telemetry.addData("Detected Zone", detectedZone);
-            telemetry.addData("Distance Left", visionSubsystem.getDistance1());
-            telemetry.addData("Distance Right", visionSubsystem.getDistance2());
+            telemetry.addData("Distance 1", visionSubsystem.getDistance1());
+            telemetry.addData("Distance 2", visionSubsystem.getDistance2());
             telemetry.update();
         }
     }

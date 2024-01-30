@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.drive.vision;
 
+import com.acmerobotics.dashboard.config.Config;
+
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Rect;
@@ -10,7 +12,7 @@ import org.openftc.easyopencv.OpenCvPipeline;
 import java.util.Arrays;
 import java.util.List;
 
-
+@Config
 public class SplitAveragePipeline extends OpenCvPipeline {
 
     List<Integer> ELEMENT_COLOR = Arrays.asList(255, 0, 0); //(red, green, blue)
@@ -33,7 +35,14 @@ public class SplitAveragePipeline extends OpenCvPipeline {
     double distance2 = 1;
 
     double max_distance = 0;
-
+    public static int x1 = 200;
+    public static int y1 = 100;
+    public static int width1 = 250;
+    public static int height1 = 150;
+    public static int x2 = 800;
+    public static int y2 = 75;
+    public static int width2 = 200;
+    public static int height2 = 200;
 
     @Override
     public Mat processFrame(Mat input) {
@@ -45,8 +54,8 @@ public class SplitAveragePipeline extends OpenCvPipeline {
 
         //Defining Zones
         //Rect(top left x, top left y, bottom right x, bottom right y)
-        zone1 = input.submat(new Rect(60, 170, 356, 285));
-        zone2 = input.submat(new Rect(735, 170, 253, 230));
+        zone2 = input.submat(new Rect(x1, y1, width1, height1));
+        zone1 = input.submat(new Rect(x2, y2, width2, height2));
 
         Rect rectZone1 = new Rect(60, 170, 356, 285);
         Rect rectZone2 = new Rect(735, 170, 253, 230);
